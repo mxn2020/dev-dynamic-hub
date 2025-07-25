@@ -1,7 +1,7 @@
 // src/pages/Landing.tsx
 
 import React, { useState, useEffect } from 'react';
-import { Bike, Wrench, Users, Star, User, MapPin, Phone, Mail, Clock, Award, Shield } from 'lucide-react';
+import { Bike, Wrench, Users, Star, User, MapPin, Phone, Clock, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Container, Button, Card, CardContent, Badge, Header, Nav, Section, Span, H1, H2, P, Div, Footer } from '../lib/dev-container';
 import { useAuth } from '../components/auth/AuthProvider';
@@ -9,27 +9,27 @@ import type { ComponentRegistryId } from '../registry/componentRegistry';
 
 // Helper functions to ensure type safety for dynamic IDs
 const getStatCardId = (index: number): ComponentRegistryId => {
-  const ids: ComponentRegistryId[] = ['stat-card-0', 'stat-card-1', 'stat-card-2', 'stat-card-3'];
+  const ids: ComponentRegistryId[] = ['stat-card-0' as ComponentRegistryId, 'stat-card-1' as ComponentRegistryId, 'stat-card-2' as ComponentRegistryId, 'stat-card-3' as ComponentRegistryId];
   return ids[index] || 'noID';
 };
 
 const getServiceCardId = (index: number): ComponentRegistryId => {
-  const ids: ComponentRegistryId[] = ['service-card-0', 'service-card-1', 'service-card-2', 'service-card-3'];
+  const ids: ComponentRegistryId[] = ['service-card-0' as ComponentRegistryId, 'service-card-1' as ComponentRegistryId, 'service-card-2' as ComponentRegistryId, 'service-card-3' as ComponentRegistryId];
   return ids[index] || 'noID';
 };
 
 const getBikeTypeId = (index: number): ComponentRegistryId => {
-  const ids: ComponentRegistryId[] = ['bike-type-0', 'bike-type-1', 'bike-type-2', 'bike-type-3', 'bike-type-4', 'bike-type-5'];
+  const ids: ComponentRegistryId[] = ['bike-type-0' as ComponentRegistryId, 'bike-type-1' as ComponentRegistryId, 'bike-type-2' as ComponentRegistryId, 'bike-type-3' as ComponentRegistryId, 'bike-type-4' as ComponentRegistryId, 'bike-type-5' as ComponentRegistryId];
   return ids[index] || 'noID';
 };
 
 const getBikeTypeBadgeId = (index: number): ComponentRegistryId => {
-  const ids: ComponentRegistryId[] = ['bike-badge-0', 'bike-badge-1', 'bike-badge-2', 'bike-badge-3', 'bike-badge-4', 'bike-badge-5'];
+  const ids: ComponentRegistryId[] = ['bike-badge-0' as ComponentRegistryId, 'bike-badge-1' as ComponentRegistryId, 'bike-badge-2' as ComponentRegistryId, 'bike-badge-3' as ComponentRegistryId, 'bike-badge-4' as ComponentRegistryId, 'bike-badge-5' as ComponentRegistryId];
   return ids[index] || 'noID';
 };
 
 const getTestimonialCardId = (index: number): ComponentRegistryId => {
-  const ids: ComponentRegistryId[] = ['testimonial-card-0', 'testimonial-card-1', 'testimonial-card-2'];
+  const ids: ComponentRegistryId[] = ['testimonial-card-0' as ComponentRegistryId, 'testimonial-card-1' as ComponentRegistryId, 'testimonial-card-2' as ComponentRegistryId];
   return ids[index] || 'noID';
 };
 
@@ -144,7 +144,7 @@ export const Landing: React.FC = () => {
             className="flex items-center space-x-4"
           >
             <Button 
-              devId="services-button" 
+              devId={'services-button' as ComponentRegistryId}
               devName="Services Button" 
               devDescription="Link to services section"
               variant="ghost" 
@@ -153,7 +153,7 @@ export const Landing: React.FC = () => {
               Services
             </Button>
             <Button 
-              devId="contact-button" 
+              devId={'contact-button' as ComponentRegistryId}
               devName="Contact Button" 
               devDescription="Link to contact section"
               variant="ghost" 
@@ -244,7 +244,7 @@ export const Landing: React.FC = () => {
             >
               Your Premier 
               <Span 
-                devId="bike-shop-highlight" 
+                devId={'bike-shop-highlight' as ComponentRegistryId}
                 devName="Bike Shop Highlight" 
                 devDescription="Highlighted bike shop text in gradient"
                 className="bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent"
@@ -270,7 +270,7 @@ export const Landing: React.FC = () => {
               {isAuthenticated ? (
                 <Link to="/dashboard">
                   <Button 
-                    devId="hero-start-shopping"
+                    devId={'hero-start-shopping' as ComponentRegistryId}
                     devName="Start Shopping Button"
                     devDescription="Primary call-to-action button for starting to shop"
                     className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
@@ -281,7 +281,7 @@ export const Landing: React.FC = () => {
               ) : (
                 <Link to="/register">
                   <Button 
-                    devId="hero-start-shopping"
+                    devId={'hero-start-shopping' as ComponentRegistryId}
                     devName="Start Shopping Button"
                     devDescription="Primary call-to-action button for starting to shop"
                     className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
@@ -291,7 +291,7 @@ export const Landing: React.FC = () => {
                 </Link>
               )}
               <Button 
-                devId="hero-browse-bikes"
+                devId={'hero-browse-bikes' as ComponentRegistryId}
                 devName="Browse Bikes Button"
                 devDescription="Secondary button to browse bike inventory"
                 variant="outline"
@@ -337,7 +337,7 @@ export const Landing: React.FC = () => {
       </Container>
 
       {/* Services Section */}
-      <Container componentId="services-section">
+      <Container componentId={'services-section' as ComponentRegistryId}>
         <Section devId="noID" className="container mx-auto px-4 py-20">
           <Div devId="noID" className="text-center mb-16">
             <H2 devId="noID" className="text-4xl font-bold text-white mb-4">Our Services</H2>
@@ -366,7 +366,7 @@ export const Landing: React.FC = () => {
       </Container>
 
       {/* Bike Types Section */}
-      <Container componentId="bike-types-section">
+      <Container componentId={'bike-types-section' as ComponentRegistryId}>
         <Section devId="noID" className="container mx-auto px-4 py-20">
           <Div devId="noID" className="text-center mb-16">
             <H2 devId="noID" className="text-4xl font-bold text-white mb-4">Bike Categories</H2>
@@ -395,7 +395,7 @@ export const Landing: React.FC = () => {
       </Container>
 
       {/* Testimonials Section */}
-      <Container componentId="testimonials-section">
+      <Container componentId={'testimonials-section' as ComponentRegistryId}>
         <Section devId="noID" className="container mx-auto px-4 py-20">
           <Div devId="noID" className="text-center mb-16">
             <H2 devId="noID" className="text-4xl font-bold text-white mb-4">What Our Customers Say</H2>
@@ -428,7 +428,7 @@ export const Landing: React.FC = () => {
       </Container>
 
       {/* Contact Section */}
-      <Container componentId="contact-section">
+      <Container componentId={'contact-section' as ComponentRegistryId}>
         <Section devId="noID" className="container mx-auto px-4 py-20">
           <Div devId="noID" className="bg-gradient-to-r from-orange-600/20 to-red-600/20 rounded-2xl p-12 text-center border border-orange-500/30">
             <H2 devId="noID" className="text-4xl font-bold text-white mb-4">Visit Our Shop</H2>
@@ -451,7 +451,7 @@ export const Landing: React.FC = () => {
             </Div>
             <Div devId="noID" className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
-                devId="contact-visit-button"
+                devId={'contact-visit-button' as ComponentRegistryId}
                 devName="Visit Us Button"
                 devDescription="Primary button to visit the shop"
                 className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105"
@@ -462,7 +462,7 @@ export const Landing: React.FC = () => {
                 </span>
               </Button>
               <Button 
-                devId="contact-call-button"
+                devId={'contact-call-button' as ComponentRegistryId}
                 devName="Call Us Button"
                 devDescription="Secondary button to call the shop"
                 variant="outline"
